@@ -4,12 +4,14 @@ ready = function() {
 	var bioLink = document.getElementById("bio-link");
 	var portfolioLink = document.getElementById("portfolio-link");
 
+	bioLink.style.border="2px solid white"
+	$("#bio-section").show();
 
 	bioLink.onclick = function() {
 		if($("#bio-section").is(":hidden"))
 		{	
-			$("#portfolio-section").slideUp();
-			$("#bio-section").slideDown();
+			$("#portfolio-section").hide();
+			$("#bio-section").show();
 			bioLink.style.border="2px solid white"
 			portfolioLink.style.border=""
 		}
@@ -19,8 +21,8 @@ ready = function() {
 	portfolioLink.onclick = function() {
 		if($("#portfolio-section").is(":hidden"))
 		{
-			$("#bio-section").slideUp();
-			$("#portfolio-section").slideDown();
+			$("#bio-section").hide();
+			$("#portfolio-section").show();
 			portfolioLink.style.border="2px solid white"
 			bioLink.style.border=""
 		}
