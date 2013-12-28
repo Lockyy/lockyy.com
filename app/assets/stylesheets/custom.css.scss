@@ -1,0 +1,74 @@
+@import 'bootstrap';
+
+/* yay colours */
+
+$greyBlue: #476079;
+$darkBlue: #184069;
+$blue: #55708B;
+$lightBlue : #7AA4D0;
+$veryLightBlue: #AABDD1;
+
+body {
+	font-family: helvetica;
+	background: $veryLightBlue;
+	color: $veryLightBlue;
+}
+
+.navbar-inner {
+	background: $greyBlue;
+	text-align: center;
+}
+
+h3 {
+	color: $veryLightBlue;
+	text-decoration: none;
+	a {
+		text-decoration: none;
+		color: $veryLightBlue;
+		&:hover {
+			text-decoration: none;
+			color: $veryLightBlue;
+		}
+	}
+}
+
+h2 {
+	font-size: 25px;
+}
+
+.pushDown {
+	margin-top: 50px;
+}
+
+.pushUp{
+	margin-bottom: 50px;
+}
+
+.navigation-button-bar {
+	margin-top: 175px;
+}
+
+.navigation-link {
+	border-radius: 4px;
+	padding-top: 5px;
+	text-align: center;
+	background: $greyBlue;
+}
+
+#bio-link {
+	border: 2px solid white;
+}
+
+#portfolio-link {
+}
+
+.content {
+	margin: 10px;
+	border-radius: 4px;
+	background: $blue;
+	padding: 10px;
+}
+
+#portfolio-section {
+	display: none;
+}
