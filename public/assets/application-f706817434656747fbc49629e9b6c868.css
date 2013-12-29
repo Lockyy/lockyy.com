@@ -4868,35 +4868,56 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 
 /* yay colours */
 body {
-  font-family: helvetica;
+  font-family: Helvetica;
   background: #aabdd1;
   color: #aabdd1; }
 
-.navbar-inner {
-  background: #476079;
-  text-align: center; }
-
-h3 {
-  color: #aabdd1;
-  text-decoration: none; }
-  h3 a {
-    text-decoration: none;
-    color: #aabdd1; }
-    h3 a:hover {
-      text-decoration: none;
-      color: #aabdd1; }
+/* Typography */
+h1, h2, h3 {
+  font-weight: normal; }
 
 h2 {
   font-size: 25px; }
 
+h3 {
+  color: #aabdd1; }
+  h3 a {
+    text-decoration: none; }
+    h3 a:hover {
+      color: #55708b;
+      text-decoration: none; }
+    h3 a:visited {
+      text-decoration: none;
+      border: none;
+      outline: none; }
+    h3 a:active {
+      color: #55708b;
+      text-decoration: none;
+      border: none;
+      outline: none; }
+    h3 a:focus {
+      color: #55708b;
+      text-decoration: none;
+      border: none;
+      outline: none; }
+
+a {
+  color: #7aa4d0; }
+
+/* Layout */
 .pushDown {
-  margin-top: 50px; }
+  margin-top: 25px; }
 
 .pushUp {
-  margin-bottom: 50px; }
+  margin-bottom: 25px; }
 
 .navigation-button-bar {
-  margin-top: 175px; }
+  margin-top: 125px; }
+
+/* Design Styling */
+.navbar-inner {
+  background: #476079;
+  text-align: center; }
 
 .navigation-link {
   border-radius: 4px;
@@ -4904,14 +4925,38 @@ h2 {
   text-align: center;
   background: #476079; }
 
-.content {
-  margin: 10px;
-  border-radius: 4px;
-  background: #55708b;
-  padding: 10px; }
+.buttonBarImg {
+  margin-top: 7px;
+  height: 40px; }
 
+/* Section Hiding */
 #portfolio-section {
   display: none; }
 
 #bio-section {
   display: none; }
+
+/* Portfolio layout */
+.section {
+  font-size: 16px;
+  margin-bottom: 25px;
+  margin: 10px;
+  border-radius: 4px;
+  background: #55708b;
+  padding: 10px;
+  font-size: 16px; }
+  .section h4 {
+    font-size: 26px;
+    line-height: 25px; }
+
+.subsection {
+  margin-bottom: 20px; }
+  .subsection h4 {
+    font-size: 22px;
+    line-height: 23px; }
+
+.item {
+  margin-bottom: 15px; }
+  .item h4 {
+    font-size: 18px;
+    line-height: 21px; }
