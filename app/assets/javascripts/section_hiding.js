@@ -5,6 +5,7 @@ ready = function() {
 	var portfolioLink = document.getElementById("portfolio-link");
 
 	bioLink.style.border="2px solid white"
+	portfolioLink.style.border="2px solid #476079"
 	$("#bio-section").show();
 
 	bioLink.onclick = function() {
@@ -13,7 +14,7 @@ ready = function() {
 			$("#portfolio-section").hide();
 			$("#bio-section").show();
 			bioLink.style.border="2px solid white"
-			portfolioLink.style.border=""
+			portfolioLink.style.border="2px solid #476079"
 		}
 		return false;
 	}
@@ -24,7 +25,7 @@ ready = function() {
 			$("#bio-section").hide();
 			$("#portfolio-section").show();
 			portfolioLink.style.border="2px solid white"
-			bioLink.style.border=""
+			bioLink.style.border="2px solid #476079"
 		}
 		return false;
 	}

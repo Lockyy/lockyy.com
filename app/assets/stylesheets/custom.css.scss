@@ -9,8 +9,22 @@ $lightBlue : #7AA4D0;
 $veryLightBlue: #AABDD1;
 
 body {
-	font-family: helvetica;
+	font-family: Helvetica;
 	background: $veryLightBlue;
+	color: $veryLightBlue;
+}
+
+/* Typography */
+
+h1, h2, h3{
+	font-weight:normal;
+}
+
+h2 {
+	font-size: 25px;
+}
+
+h3 {
 	color: $veryLightBlue;
 }
 
@@ -18,42 +32,25 @@ a {
 	color: $lightBlue;
 }
 
-.navbar-inner {
-	background: $greyBlue;
-	text-align: center;
-}
-
-h3 {
-	color: $veryLightBlue;
-	text-decoration: none;
-	a {
-		text-decoration: none;
-		color: $veryLightBlue;
-		&:hover {
-			text-decoration: none;
-			color: $veryLightBlue;
-		}
-	}
-}
-
-h2 {
-	font-size: 25px;
-}
-
-p {
-	font-size: 16px;
-}
+/* Layout */
 
 .pushDown {
-	margin-top: 50px;
+	margin-top: 25px;
 }
 
 .pushUp{
-	margin-bottom: 50px;
+	margin-bottom: 25px;
 }
 
 .navigation-button-bar {
-	margin-top: 175px;
+	margin-top: 125px;
+}
+
+/* Design Styling */
+
+.navbar-inner {
+	background: $greyBlue;
+	text-align: center;
 }
 
 .navigation-link {
@@ -63,18 +60,12 @@ p {
 	background: $greyBlue;
 }
 
-#bio-link {
+.githubImg {
+	margin-top: 7px;
+	height: 40px;
 }
 
-#portfolio-link {
-}
-
-.content {
-	margin: 10px;
-	border-radius: 4px;
-	background: $blue;
-	padding: 10px;
-}
+/* Section Hiding */
 
 #portfolio-section {
 	display: none;
@@ -82,4 +73,36 @@ p {
 
 #bio-section {
 	display: none;
+}
+
+/* Portfolio layout */
+
+.section {
+	h3 {
+		font-size: 26px;
+		line-height: 25px;
+	}
+	font-size: 16px;
+	margin-bottom: 25px;
+	margin: 10px;
+	border-radius: 4px;
+	background: $blue;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.subsection {
+	h3 {
+		font-size: 22px;
+		line-height: 23px;
+	}
+	margin-bottom: 20px;
+}
+
+.item {
+	h3 {
+		font-size: 18px;
+		line-height: 21px;
+	}
+	margin-bottom: 15px;
 }
