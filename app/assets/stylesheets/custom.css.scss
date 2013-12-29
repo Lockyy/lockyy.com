@@ -26,6 +26,30 @@ h2 {
 
 h3 {
 	color: $veryLightBlue;
+	a{
+		text-decoration: none;
+		&:hover {
+			color: $blue;
+			text-decoration: none;
+		}
+		&:visited {
+			text-decoration: none;
+			border: none;
+    		outline: none;
+		}
+		&:active {
+			color: $blue;
+			text-decoration: none;
+			border: none;
+   			outline: none;
+		}
+		&:focus {
+			color: $blue;
+			text-decoration: none;
+			border: none;
+    		outline: none;
+		}
+	}
 }
 
 a {

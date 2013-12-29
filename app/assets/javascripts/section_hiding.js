@@ -6,6 +6,8 @@ ready = function() {
 
 	bioLink.style.border="2px solid white"
 	portfolioLink.style.border="2px solid #476079"
+	bioLink.style.color="#55708B"
+	portfolioLink.style.color="#7AA4D0"
 	$("#bio-section").show();
 
 	bioLink.onclick = function() {
@@ -15,6 +17,8 @@ ready = function() {
 			$("#bio-section").show();
 			bioLink.style.border="2px solid white"
 			portfolioLink.style.border="2px solid #476079"
+			bioLink.style.color="#55708B"
+			portfolioLink.style.color="#7AA4D0"
 		}
 		return false;
 	}
@@ -26,6 +30,8 @@ ready = function() {
 			$("#portfolio-section").show();
 			portfolioLink.style.border="2px solid white"
 			bioLink.style.border="2px solid #476079"
+			portfolioLink.style.color="#55708B"
+			bioLink.style.color="#7AA4D0"
 		}
 		return false;
 	}
