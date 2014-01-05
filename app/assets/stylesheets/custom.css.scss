@@ -82,21 +82,18 @@ a {
 	padding-top: 5px;
 	text-align: center;
 	background: $greyBlue;
+	color: $lightBlue;
+	border: "2px solid #476079";
+}
+
+.currentPage {
+	color: $blue;
+	border: "2px solid white";
 }
 
 .buttonBarImg {
 	margin-top: 12px;
 	height: 32px;
-}
-
-/* Section Hiding */
-
-#portfolio-section {
-	display: none;
-}
-
-#bio-section {
-	display: none;
 }
 
 /* Portfolio layout */

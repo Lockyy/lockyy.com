@@ -1,4 +1,7 @@
 class StaticPagesController < ApplicationController
-  def home
+  def bio
+  end
+
+  def portfolio
   end
 end

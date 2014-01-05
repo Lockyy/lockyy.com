@@ -1,7 +1,30 @@
 <div class="navigation-button-bar row-fluid">
 	<h3>
-		<%= link_to "Bio", "#", class: "navigation-link span5 offset1", id: "bio-link" %>
-		<%= link_to "Portfolio", "#", class: "navigation-link span5", id: "portfolio-link" %>
-		<%= link_to image_tag("github.png", class: "buttonBarImg"), "https://github.com/Lockyy", class: "span1"%>
+		<% if(controller.action_name == 'bio') %>
+			<%= link_to "Bio", 
+						root_path, 
+						class: "navigation-link span5 offset1 currentPage", 
+						id: "bio-link" %>
+
+			<%= link_to "Portfolio", 
+						portfolio_path, 
+						class: "navigation-link span5", 
+						id: "portfolio-link" %>
+		<% else %>
+			<%= link_to "Bio", 
+						root_path, 
+						class: "navigation-link span5 offset1", 
+						id: "bio-link" %>
+
+			<%= link_to "Portfolio", 
+						portfolio_path, 
+						class: "navigation-link span5 currentPage", 
+						id: "portfolio-link" %>
+		<% end %>
+
+		<%= link_to image_tag("github.png", 
+					class: "buttonBarImg"), 
+					"https://github.com/Lockyy", 
+					class: "span1"%>
 	</h3>
 </div>

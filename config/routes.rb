@@ -1,5 +1,6 @@
 Lockyy::Application.routes.draw do
-  root "static_pages#home"
+  root "static_pages#bio"
+  match '/portfolio',    to: "static_pages#portfolio",      via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
