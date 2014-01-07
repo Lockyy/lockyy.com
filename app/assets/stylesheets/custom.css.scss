@@ -34,19 +34,16 @@ h3 {
 		}
 		&:visited {
 			text-decoration: none;
-			border: none;
     		outline: none;
 		}
 		&:active {
 			color: $blue;
 			text-decoration: none;
-			border: none;
    			outline: none;
 		}
 		&:focus {
 			color: $blue;
 			text-decoration: none;
-			border: none;
     		outline: none;
 		}
 	}
@@ -83,12 +80,12 @@ a {
 	text-align: center;
 	background: $greyBlue;
 	color: $lightBlue;
-	border: "2px solid #476079";
+	border: 2px solid #476079;
 }
 
 .currentPage {
 	color: $blue;
-	border: "2px solid white";
+	border: 2px solid white;
 }
 
 .buttonBarImg {
