@@ -1,12 +1,5 @@
 <div class="row-fluid" id="bio-section">
 	<div class="section">
-		<div class="bio-line">
-			Hi, I'm Daniel Lockhart. I'm a Ruby on Rails developer studying Computer Science at the 
-			<%= link_to "University of Liverpool", "http://www.liv.ac.uk/computer-science/" %>
-		</div>
-		<div class="bio-line">
-			You can find me online on <%= link_to "Github", "http://www.github.com/lockyy" %> or shoot
-			me an email at <%= mail_to "daniel@lockyy.com" %>
-		</div>
+		<%= render partial: 'bio', collection: @bio %>
 	</div>
 </div>

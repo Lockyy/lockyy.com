@@ -17,6 +17,8 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'unicorn'
 gem 'brakeman'
+gem 'casein'
+gem 'paperclip', github: 'thoughtbot/paperclip'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
