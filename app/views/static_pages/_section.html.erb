@@ -1,8 +1,11 @@
 <div class="section">
-	<h4>
-	<%= section.name %>
-	</h4>
-	<%= simple_format(section.description) %>
+	<div class="box <%= "subsection" if subsection %>">
+		<h4>
+		<%= section.name %>
+		</h4>
+		<%= simple_format(section.description) %>
 
-	<%= render partial: 'item', collection: section.items %>
+	</div>
+		<%= render partial: 'item', collection: section.items %>
+		<%= render partial: 'section', collection: section.subsections, locals: { subsection: true } %>
 </div>

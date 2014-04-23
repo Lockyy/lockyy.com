@@ -4,6 +4,6 @@ class StaticPagesController < ApplicationController
   end
 
   def portfolio
-  	@sections = Section.order(:order).all
+  	@sections = Section.order(:order).where(section_id: nil)
   end
 end

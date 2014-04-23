@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422192911) do
+ActiveRecord::Schema.define(version: 20140423181355) do
 
   create_table "bios", force: true do |t|
     t.text     "content"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20140422192911) do
     t.integer  "order"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "section_id"
   end
 
 end

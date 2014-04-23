@@ -59,7 +59,7 @@ module Casein
     private
       
       def section_params
-        params.require(:section).permit(:name, :description, :order)
+        params.require(:section).permit(:name, :description, :section_id, :order)
       end
 
   end
