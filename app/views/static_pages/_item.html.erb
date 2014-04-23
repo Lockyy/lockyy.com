@@ -1,0 +1,14 @@
+<div class="item">
+	<h4>
+	<%= item.name %>
+	</h4>
+	<div class="item content">
+		<%= item.content %>
+	</div>
+	<div class="item link">
+		<%= link_to "link", item.link %>
+	</div>
+	<div class="item image">
+	<%= render partial: 'image', collection: item.images %>
+	</div>
+</div>
