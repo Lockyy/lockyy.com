@@ -6,6 +6,6 @@
 		<%= simple_format(section.description) %>
 
 	</div>
-		<%= render partial: 'item', collection: section.items %>
 		<%= render partial: 'section', collection: section.subsections, locals: { subsection: true } %>
+		<%= render partial: 'item', collection: section.items %>
 </div>

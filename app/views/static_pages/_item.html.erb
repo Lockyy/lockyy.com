@@ -1,14 +1,15 @@
 <div class="box item">
 	<h4>
-	<%= item.name %>
+		<%= item.name %> - <%= link_to "link", item.link %>
+		</span>
 	</h4>
+	
+
 	<div class="item content">
 		<%= item.content %>
 	</div>
-	<div class="item link">
-		<%= link_to "link", item.link %>
-	</div>
+
 	<div class="item image">
-	<%= render partial: 'image', collection: item.images %>
+		<%= render partial: 'image', collection: item.images %>
 	</div>
 </div>
