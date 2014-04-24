@@ -1,6 +1,10 @@
 <div class="box item">
 	<div class="title">
-		<%= markdown("#####{item.name} - [link](#{item.link} 'Link to #{item.name}')") %>
+		<% 
+			title = "#####{item.name}"
+			title +=  " - [link](#{item.link} 'Link to #{item.name}')" unless item.link.blank?
+		%>
+		<%= markdown(title) %>
 	</div>
 
 	<div class="content">
