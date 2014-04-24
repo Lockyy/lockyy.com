@@ -19,6 +19,7 @@ gem 'unicorn'
 gem 'brakeman'
 gem 'casein'
 gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

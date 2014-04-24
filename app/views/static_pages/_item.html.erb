@@ -1,15 +1,13 @@
 <div class="box item">
-	<h4>
-		<%= item.name %> - <%= link_to "link", item.link %>
-		</span>
-	</h4>
-	
-
-	<div class="item content">
-		<%= item.content %>
+	<div class="title">
+		<%= markdown("#####{item.name} - [link](#{item.link} 'Link to #{item.name}')") %>
 	</div>
 
-	<div class="item image">
+	<div class="content">
+		<%= markdown(item.content) %>
+	</div>
+
+	<div class="image">
 		<%= render partial: 'image', collection: item.images %>
 	</div>
 </div>
