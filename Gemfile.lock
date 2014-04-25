@@ -232,7 +232,7 @@ DEPENDENCIES
   bootstrap-will_paginate (= 0.0.9)
   brakeman
   capybara (= 2.1.0)
-  casein
+  casein (~> 4.0.0)
   coffee-rails (= 4.0.1)
   cucumber-rails (= 1.4.0)
   factory_girl_rails (= 4.2.0)

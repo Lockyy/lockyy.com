@@ -17,7 +17,7 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'unicorn'
 gem 'brakeman'
-gem 'casein'
+gem 'casein', '~> 4.0.0'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'redcarpet'
 
