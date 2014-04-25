@@ -13,9 +13,6 @@ Bundler.require(:default, Rails.env)
 
 module Lockyy
   class Application < Rails::Application
-    # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-    config.force_ssl = true
-
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
