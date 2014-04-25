@@ -1,10 +1,6 @@
 <div class="box item">
 	<div class="title">
-		<% 
-			title = "#####{item.name}"
-			title +=  " - [link](#{item.link} 'Link to #{item.name}')" unless item.link.blank?
-		%>
-		<%= markdown(title) %>
+		<%= link_to markdown("#####{item.name}"), item.link %>
 	</div>
 
 	<div class="content">
