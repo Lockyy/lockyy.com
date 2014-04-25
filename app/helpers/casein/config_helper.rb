@@ -4,7 +4,7 @@ module Casein
     # Text string containing the name of the website or client
     # Used in text and titles throughout Casein
     def casein_config_website_name
-      'Casein'
+      'Lockyy.com'
     end
 
     # URL to the logo used for the login screen and top banner - it should be a transparent PNG
@@ -15,15 +15,15 @@ module Casein
     # The server hostname where Casein will run
     def casein_config_hostname
       if ENV['RAILS_ENV'] == 'production'
-        'http://www.caseincms.com'
+        'https://www.lockyy.com'
       else
-        'http://0.0.0.0:3000'
+        'https://lockyy.dev'
       end
     end
 
     # The sender email address used for notifications
     def casein_config_email_from_address
-      'donotreply@caseincms.com'
+      'daniel@lockyy.com'
     end
   
     # The page that the user is shown when they login or click the logo
@@ -34,12 +34,12 @@ module Casein
   
     # A list of stylesheet files to include in the page head section
     def casein_config_stylesheet_includes
-      %w[casein/custom casein/casein]
+      %w[casein/casein]
     end
   
     # A list of JavaScript files to include in the page head section
     def casein_config_javascript_includes
-      %w[casein/custom casein/casein]
+      %w[casein/casein]
     end
     
   end
