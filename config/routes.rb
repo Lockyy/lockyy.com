@@ -8,11 +8,7 @@ Lockyy::Application.routes.draw do
     resources :sections
   end
 
-  root "static_pages#bio"
-  match '/portfolio',    to: "static_pages#portfolio",      via: 'get'
-
-  unless Rails.env.development?
-  	get '*path' => redirect('/')
-  end
+  root 'static_pages#bio'
+  get '/portfolio', to: 'static_pages#portfolio'
 
 end
