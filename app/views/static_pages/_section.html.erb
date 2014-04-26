@@ -1,7 +1,7 @@
 <div class="section">
 	<div class="box <%= "subsection" if subsection %>">
 		<div class="title">
-		<%= section.name %>
+		<%= markdown(section.name) %>
 		</div>
 		<%= markdown(section.description) %>
 
