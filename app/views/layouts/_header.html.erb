@@ -1,8 +1,15 @@
 <header class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
-			<h1 class="pushDown">Daniel Lockhart</h1>
-			<h2 class="pushUp"><%= mail_to "daniel@lockyy.com" %></h2>
+			<div class="row">
+				<div class="col-xs-5 col-xs-offset-1">
+					<div class="title pushDown">Daniel Lockhart</div>
+					<div class="title pushUp"><%= mail_to "daniel@lockyy.com" %></div>
+				</div>
+				<div class="col-xs-5 col-xs-offset-1">
+					<%= render 'layouts/buttonBar' %>
+				</div>
+			</div>
 		</div>
 	</div>
 </header>

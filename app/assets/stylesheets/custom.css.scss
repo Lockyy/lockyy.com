@@ -3,6 +3,7 @@
 /* yay colours */
 
 $greyBlue: #476079;
+$veryDarkBlue: #082440;
 $darkBlue: #184069;
 $blue: #55708B;
 $lightBlue : #7AA4D0;
@@ -15,49 +16,33 @@ $veryLightBlue: #AABDD1;
 }
 
 body {
-	font-family: Helvetica;
-	background: $veryLightBlue;
+	background: $greyBlue;
 	color: $veryLightBlue;
+	font-family: "lato", serif;
+	font-style: normal;
+	font-weight: 300;
 }
 
 /* Typography */
-
-h1, h2, h3, h4{
-	font-weight:normal;
-}
 
 h2 {
 	font-size: 25px;
 }
 
-h3 {
-	margin-top: 0px;
-	color: $veryLightBlue;
-	a {
+a {
+	color: inherit;
+	&:hover {
+		color: $lightBlue;
 		text-decoration: none;
-		&:hover {
-			color: $blue;
-			text-decoration: none;
-		}
-		&:visited {
-			text-decoration: none;
-    		outline: none;
-		}
-		&:active {
-			color: $blue;
-			text-decoration: none;
-   			outline: none;
-		}
-		&:focus {
-			color: $blue;
-			text-decoration: none;
-    		outline: none;
-		}
 	}
 }
 
-a {
-	color: $lightBlue;
+.title {
+	font-size: 36px;
+}
+
+.link {
+	font-size: 25px;
 }
 
 .bio-line {
@@ -69,6 +54,18 @@ a {
 }
 
 /* Layout */
+
+.wrapper {
+	background: white;
+	border-radius: 4px;
+	color: $veryDarkBlue;
+	margin-bottom: 30px;
+	margin-top: 155px;
+	a {
+		color: inherit;
+		text-decoration: underline !important;
+	}
+}
 
 .pushDown {
 	margin-top: 25px;
@@ -108,13 +105,12 @@ a {
 
 .box {
 	margin: 10px;
+	margin-bottom: 0px;
 	padding: 10px;
-	border-radius: 4px;
-	background: $blue;
 }
 
 .section {
-	h4 {
+	.title {
 		font-size: 24px;
 		line-height: 25px;
 	}
@@ -122,20 +118,20 @@ a {
 }
 
 .subsection {
-	h4 {
-		font-size: 20px;
+	.title {
+		font-size: 24px;
 		line-height: 23px;
 	}
 }
 
 .subsection-items {
-	margin-left: 5px;
+	margin-left: 8px;
 }
 
 .item {
-	h4 {
-		font-size: 19px;
+	margin-top: 0px;
+	.title {
+		font-size: 20px;
 		line-height: 21px;
 	}
-	margin-bottom: 15px;
 }

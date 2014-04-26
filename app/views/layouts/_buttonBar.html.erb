@@ -1,22 +1,15 @@
-<div class="navigation-button-bar row">
-	<h3>
-		<% bio_button_class_string = "navigation-link col-xs-5 col-xs-offset-1" %>
-		<% portfolio_button_class_string = "navigation-link col-xs-5" %>
-
-		<% if(controller.action_name == 'bio') %>
-			<% bio_button_class_string += " currentPage" %>
-		<% else %>
-			<% portfolio_button_class_string += " currentPage" %>
-		<% end %>
-
-		<%= link_to "Bio", 
-					root_path, 
-					class: bio_button_class_string, 
-					id: "bio-link" %>
-
-		<%= link_to "Portfolio", 
-					portfolio_path, 
-					class: portfolio_button_class_string, 
-					id: "portfolio-link" %>
-	</h3>
+<div class="link pushDown">
+	<%= link_to "Bio", 
+				root_path,
+				id: "bio-link" %>
+</div>
+<div class="link">
+	<%= link_to "Portfolio", 
+				portfolio_path,
+				id: "portfolio-link" %>
+</div>
+<div class="link pushUp">
+	<%= link_to "Github", 
+				"http://github.com/lockyy",
+				id: "github-link" %>
 </div>
