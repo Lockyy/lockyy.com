@@ -8,6 +8,12 @@ $blue: #55708B;
 $lightBlue : #7AA4D0;
 $veryLightBlue: #AABDD1;
 
+@media (min-width: 1200px) {
+    .container{
+        max-width: 970px;
+    }
+}
+
 body {
 	font-family: Helvetica;
 	background: $veryLightBlue;
@@ -25,6 +31,7 @@ h2 {
 }
 
 h3 {
+	margin-top: 0px;
 	color: $veryLightBlue;
 	a {
 		text-decoration: none;
@@ -55,7 +62,10 @@ a {
 
 .bio-line {
 	text-align: center;
-	line-height: 150%;
+	margin: 10px;
+	p {
+		margin-bottom: 0px;
+	}
 }
 
 /* Layout */
@@ -69,7 +79,7 @@ a {
 }
 
 .navigation-button-bar {
-	margin-top: 125px;
+	margin-top: 145px;
 }
 
 /* Design Styling */
@@ -82,20 +92,16 @@ a {
 .navigation-link {
 	border-radius: 4px;
 	padding-top: 5px;
+	padding-bottom: 5px;
 	text-align: center;
 	background: $greyBlue;
 	color: $lightBlue;
 	border: 2px solid #476079;
+	margin-right: 5px;
 }
 
 .currentPage {
 	color: $blue;
-	border: 2px solid white;
-}
-
-.buttonBarImg {
-	margin-top: 12px;
-	height: 32px;
 }
 
 /* Portfolio layout */
@@ -123,7 +129,7 @@ a {
 }
 
 .subsection-items {
-	margin-left: 15px;
+	margin-left: 5px;
 }
 
 .item {
