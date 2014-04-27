@@ -1,15 +1,17 @@
-<div class="link pushDown">
-	<%= link_to "Bio", 
-				root_path,
-				id: "bio-link" %>
-</div>
-<div class="link">
-	<%= link_to "Portfolio", 
-				portfolio_path,
-				id: "portfolio-link" %>
-</div>
-<div class="link pushUp">
-	<%= link_to "Github", 
-				"http://github.com/lockyy",
-				id: "github-link" %>
+<div class="links pushDown pushUp">
+	<div>
+		<%= link_to "Bio", 
+					root_path,
+					id: "bio-link" %>
+	</div>
+	<div>
+		<%= link_to "Portfolio", 
+					portfolio_path,
+					id: "portfolio-link" %>
+	</div>
+	<div>
+		<%= link_to "Github", 
+					"http://github.com/lockyy",
+					id: "github-link" %>
+	</div>
 </div>
