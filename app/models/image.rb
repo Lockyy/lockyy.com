@@ -1,6 +1,6 @@
 class Image < ActiveRecord::Base
 
-	belongs_to :item
+	belongs_to :item, touch: true
 
 	has_attached_file :image, styles: { thumb: ["100x100#", :png] }, url: :image_url
 

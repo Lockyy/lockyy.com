@@ -7,7 +7,7 @@
 
 	</div>
 	<div class="subsection-items">
-		<%= render partial: 'item', collection: section.items.order(:order) %>
-		<%= render partial: 'section', collection: section.subsections.order(:order), locals: { subsection: true } %>
+		<%= render partial: 'item', collection: section.cached_items %>
+		<%= render partial: 'section', collection: section.cached_subsections, locals: { subsection: true } %>
 	</div>
 </div>

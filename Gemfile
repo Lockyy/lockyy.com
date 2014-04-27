@@ -20,9 +20,13 @@ gem 'brakeman'
 gem 'casein'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'redcarpet'
+gem 'sqlite3', '1.3.8'
+
+group :development do
+  gem 'rack-mini-profiler'
+end
 
 group :development, :test do
-  gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'
   gem 'rconsole', '~> 0.1.0'
   # The following optional lines are part of the advanced setup.

@@ -1,9 +1,9 @@
 class StaticPagesController < ApplicationController
   def bio
-  	@bio = Bio.order(:order).all
+  	@bio = Bio.cached_bio_lines
   end
 
   def portfolio
-  	@sections = Section.order(:order).where(section_id: nil)
+  	@sections = Section.cached_sections
   end
 end
