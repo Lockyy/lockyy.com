@@ -21,6 +21,7 @@ gem 'casein'
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'redcarpet'
 gem 'sqlite3', '1.3.8'
+gem 'dalli'
 
 group :development do
   gem 'rack-mini-profiler'
