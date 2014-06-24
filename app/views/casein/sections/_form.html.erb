@@ -5,6 +5,26 @@
 	<div class="col-lg-6">
 		<%= casein_text_field f, f.object, :name %>
 	</div>
+
+  <div class="col-lg-6">
+    <div class="form-group">
+      <label class="control-label" for="blog_post_blog_category_id">
+        Section
+      </label>
+      <div class="well">
+        <%= collection_select :section, 
+                              :section_id, 
+                              @section.valid_sections_for_collection_select, 
+                              :id, 
+                              :name,
+                              {:include_blank => 'Optional...'}, 
+                              {:class => 'form-control'} %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
 	<div class="col-lg-6">
 		<%= casein_text_field f, f.object, :position %>
 	</div>

@@ -23,8 +23,10 @@ gem 'sqlite3', '1.3.8'
 gem 'dalli'
 gem 'casein', '5.0.0'
 
+
 group :development do
   gem 'rack-mini-profiler'
+  gem "better_errors"
 end
 
 group :development, :test do

@@ -9,7 +9,7 @@ Lockyy::Application.routes.draw do
 	end
 
 
-  root 'static_pages#bio'
-  get '/portfolio', to: 'static_pages#portfolio'
+  root 'bio#show'
+  get '/portfolio', to: 'portfolio#show'
 
 end

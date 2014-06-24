@@ -20,4 +20,24 @@ class Section < ActiveRecord::Base
 	def cached_items
 		Rails.cache.fetch([self, "items"]) { items.to_a }
 	end
+
+	# This returns the valid sections that the current section can go under.
+	def valid_sections_for_collection_select
+		# First we remove the current section
+		result = Section.all - [self]
+
+		result.each do |result_section|
+			section = result_section
+			while section
+				if section == self
+					result - [result_section]
+					break
+				end
+				section = section.section
+			end
+		end
+
+		return result
+	end
+	
 end

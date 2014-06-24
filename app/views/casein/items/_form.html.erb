@@ -3,10 +3,10 @@
 
 <div class="row">
 	<div class="col-lg-6">
-		<%= casein_text_field f, f.object, :section_id %>
+		<%= casein_text_field f, f.object, :name %>
 	</div>
 	<div class="col-lg-6">
-		<%= casein_text_field f, f.object, :name %>
+		<%= casein_text_field f, f.object, :link %>
 	</div>
 </div>
 
@@ -14,9 +14,23 @@
 	<div class="col-lg-6">
 		<%= casein_text_field f, f.object, :position %>
 	</div>
+  
 	<div class="col-lg-6">
-		<%= casein_text_field f, f.object, :link %>
-	</div>
+    <div class="form-group">
+      <label class="control-label" for="blog_post_blog_category_id">
+        Section
+      </label>
+      <div class="well">
+        <%= collection_select :item, 
+                              :section_id, 
+                              Section.all, 
+                              :id, 
+                              :name,
+                              {:include_blank => 'Please select...'}, 
+                              {:class => 'form-control'} %>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="row">
