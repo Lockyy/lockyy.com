@@ -11,11 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140623215736) do
+ActiveRecord::Schema.define(version: 20140624153725) do
 
   create_table "bios", force: true do |t|
     t.text     "content"
     t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blog_categories", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "blog_posts", force: true do |t|
+    t.text     "title"
+    t.text     "content"
+    t.integer  "views",            default: 0
+    t.integer  "blog_category_id"
+    t.datetime "date_posted"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
