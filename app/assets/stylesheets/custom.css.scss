@@ -60,11 +60,15 @@ a {
 	border-radius: 4px;
 	color: $veryDarkBlue;
 	margin-bottom: 30px;
-	margin-top: 155px;
+	margin-top: 5px;
 	a {
 		color: inherit;
 		text-decoration: underline !important;
 	}
+}
+
+.content_push_down {
+	margin-top: 150px;
 }
 
 .pushDown {

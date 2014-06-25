@@ -1,1 +1,5 @@
-<%= render partial: 'post', collection: @posts %>
+<% if @posts.blank? %>
+  <%= render partial: 'no_posts' %>
+<% else %>
+  <%= render partial: 'post', collection: @posts %>
+<% end %>

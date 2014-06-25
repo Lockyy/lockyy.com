@@ -9,12 +9,13 @@ class BlogController < ApplicationController
   end
 
   def show
-  	@post = BlogPost.find_by(id: params[:id])
+  	@post = BlogPost.friendly.find_by_slug(params[:id])
 
     if @post
       @post.log_visit
-    else
-      redirect_to posts_path
+      if request.path != post_path(@post.blog_category, @post)
+        redirect_to post_path(@post.blog_category, @post), status: :moved_permanently
+      end
     end
   end
 

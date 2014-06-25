@@ -21,7 +21,12 @@
         </div>
 
         <div class="content">
-          <%= markdown(post.content) %>
+          <% if action_name == 'index' %>
+            <%= markdown(truncate(post.content, :length => 300, :separator => ' ')) %>
+            <%= link_to 'Read more', post_path(post.blog_category, post) %>
+          <% else %>
+            <%= markdown(post.content) %>
+          <% end %>
         </div>
 
       </div>

@@ -1,1 +1,5 @@
-<%= render partial: 'post', object: @post %>
+<% if @post.nil? %>
+  <%= render partial: 'no_posts' %>
+<% else %>
+  <%= render partial: 'post', object: @post %>
+<% end %>

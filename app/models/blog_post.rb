@@ -1,4 +1,6 @@
 class BlogPost < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :history]
 
   belongs_to :blog_category
 
@@ -8,8 +10,10 @@ class BlogPost < ActiveRecord::Base
   after_create :set_date_posted
 
   def self.category_find(category)
-    category = BlogCategory.find_by(category)
-    BlogPost.where(blog_category_id: category.id)
+    category = BlogCategory.friendly.find_by_slug(category)
+    if category
+      BlogPost.where(blog_category_id: category.id)
+    end
   end
 
   def set_date_posted

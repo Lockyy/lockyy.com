@@ -14,7 +14,7 @@ module Casein
   
     def show
       @casein_page_title = 'View blog category'
-      @blog_category = BlogCategory.find params[:id]
+      @blog_category = BlogCategory.friendly.find params[:id]
     end
   
     def new
@@ -37,7 +37,8 @@ module Casein
     def update
       @casein_page_title = 'Update blog category'
       
-      @blog_category = BlogCategory.find params[:id]
+      @blog_category = BlogCategory.friendly.find params[:id]
+      @blog_post.slug = nil
     
       if @blog_category.update_attributes blog_category_params
         flash[:notice] = 'Blog category has been updated'
@@ -49,7 +50,7 @@ module Casein
     end
  
     def destroy
-      @blog_category = BlogCategory.find params[:id]
+      @blog_category = BlogCategory.friendly.find params[:id]
 
       @blog_category.destroy
       flash[:notice] = 'Blog category has been deleted'
