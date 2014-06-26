@@ -13,9 +13,7 @@
         </div>
 
         <div class="metadata">
-          Posted on 
-          <%= post.date_posted.strftime("%b #{post.date_posted.day.ordinalize} %Y at %R") %> 
-          under 
+          Posted under 
           <%= link_to post.blog_category.title,
                       post_category_path(post.blog_category) %>
         </div>
