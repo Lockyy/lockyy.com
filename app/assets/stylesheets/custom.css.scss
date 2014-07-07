@@ -15,6 +15,15 @@ $veryLightBlue: #AABDD1;
     }
 }
 
+code {
+	padding: 0;
+	font-size: 13px;
+	color: inherit;
+	white-space: pre-wrap;
+	background-color: transparent;
+	border-radius: 0;
+}
+
 body {
 	background: $greyBlue;
 	color: $veryLightBlue;
@@ -55,6 +64,10 @@ a {
 
 /* Layout */
 
+.article {
+	padding: 50px;
+}
+
 .wrapper {
 	background: white;
 	border-radius: 4px;
@@ -65,10 +78,6 @@ a {
 		color: inherit;
 		text-decoration: underline !important;
 	}
-}
-
-.content_push_down {
-	margin-top: 150px;
 }
 
 .pushDown {
