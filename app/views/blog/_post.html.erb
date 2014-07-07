@@ -3,14 +3,14 @@
     <div class="section">
       <div class="box">
 
-        <div class="title">
+        <h1>
           <% if action_name == 'index' %>
             <%= link_to markdown(post.title), 
                         post_path(post.blog_category, post) %>
           <% else %>
             <%= markdown(post.title) %>
           <% end %>
-        </div>
+        </h1>
 
         <div class="metadata">
           Posted under 
