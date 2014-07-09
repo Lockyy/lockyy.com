@@ -2,6 +2,8 @@ class BlogPost < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
 
+  default_scope order 'date_posted DESC'
+
   belongs_to :blog_category
 
   validates :title, presence: true
