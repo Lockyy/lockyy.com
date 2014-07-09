@@ -5,7 +5,6 @@
 		<tr>
 			<th><%= casein_sort_link "Category", :blog_category_id %></th>
 			<th><%= casein_sort_link "Title", :title %></th>
-			<th><%= casein_sort_link "Content", :content %></th>
 			<th><%= casein_sort_link "Date posted", :date_posted %></th>
 			<th><%= casein_sort_link "Views", :views %></th>
 			<th>&nbsp;</th>
@@ -20,10 +19,6 @@
 
 			<td>
 				<%= casein_table_cell_link blog_post.title, casein_blog_post_path(blog_post) %>
-			</td>
-
-			<td class="content-column">
-				<%= casein_table_cell_link blog_post.content, casein_blog_post_path(blog_post) %>
 			</td>
 
 			<td class="datetime-column">
