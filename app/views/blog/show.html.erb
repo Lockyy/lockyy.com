@@ -1,5 +1,7 @@
 <% if @post.nil? %>
+  <% provide(:title, "Post Not Found") %>
   <%= render partial: 'no_posts' %>
 <% else %>
+  <% provide(:title, @post.title) %>
   <%= render partial: 'post', object: @post %>
 <% end %>
