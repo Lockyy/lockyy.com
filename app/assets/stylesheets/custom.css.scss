@@ -73,6 +73,10 @@ a {
 
 .links {
 	font-size: 25px;
+	span {
+		margin-left: 25px;
+		margin-right: 25px;
+	}
 }
 
 .bio-line {
@@ -85,8 +89,16 @@ a {
 
 /* Layout */
 
-.article {
-	padding: 50px;
+@media screen and (min-width: 1024px) {
+	.padded {
+		padding: 50px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.padded {
+		padding: 20px;
+	}
 }
 
 .wrapper {
