@@ -4,7 +4,7 @@ class BlogController < ApplicationController
     if params[:category]
       @posts = BlogPost.category_find(params[:category])
     else
-      @posts = BlogPost.all
+      @posts = BlogPost.viewable
     end
   end
 

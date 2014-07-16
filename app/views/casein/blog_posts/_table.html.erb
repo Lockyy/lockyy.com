@@ -5,7 +5,9 @@
 		<tr>
 			<th><%= casein_sort_link "Category", :blog_category_id %></th>
 			<th><%= casein_sort_link "Title", :title %></th>
+			<th><%= casein_sort_link "Published", :published %></th>
 			<th><%= casein_sort_link "Date posted", :date_posted %></th>
+			<th><%= casein_sort_link "Viewable", :published %></th>
 			<th><%= casein_sort_link "Views", :views %></th>
 			<th>&nbsp;</th>
 		</tr>
@@ -21,11 +23,23 @@
 				<%= casein_table_cell_link blog_post.title, casein_blog_post_path(blog_post) %>
 			</td>
 
-			<td class="datetime-column">
+			<td>
+				<div class="published-box <%= blog_post.published %>">
+					<%= casein_table_cell_link blog_post.published_ascii, casein_blog_post_path(blog_post) %>
+				</div>
+			</td>
+
+			<td>
 				<%= casein_table_cell_link blog_post.date_posted, casein_blog_post_path(blog_post) %>
 			</td>
 
-			<td class="datetime-column">
+			<td>
+				<div class="published-box <%= blog_post.viewable? %>">
+					<%= casein_table_cell_link blog_post.viewable_ascii, casein_blog_post_path(blog_post) %>
+				</div>
+			</td>
+
+			<td>
 				<%= casein_table_cell_link blog_post.views, casein_blog_post_path(blog_post) %>
 			</td>
 

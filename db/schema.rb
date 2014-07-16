@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140625004142) do
+ActiveRecord::Schema.define(version: 20140716164322) do
 
   create_table "bios", force: true do |t|
     t.text     "content"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20140625004142) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.boolean  "published",        default: false
   end
 
   add_index "blog_posts", ["slug"], name: "index_blog_posts_on_slug"

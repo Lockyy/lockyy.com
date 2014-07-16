@@ -20,3 +20,18 @@ textarea.form-control {
 .datetime-column {
   width: 170px;
 }
+
+.published-box {
+  text-align: center;
+  a {
+    color: white !important;
+  }
+}
+
+.true {
+  background: #00AA00 !important;
+}
+
+.false {
+  background: #AA0000 !important;
+}
