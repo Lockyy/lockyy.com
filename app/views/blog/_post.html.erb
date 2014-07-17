@@ -2,14 +2,14 @@
   <div class="col-lg-12">
     <div class="section wrapper padded">
 
-      <h2>
+      <h1>
         <% if action_name == 'index' %>
           <%= link_to markdown(post.title), 
                       post_path(post.blog_category, post) %>
         <% else %>
           <%= markdown(post.title) %>
         <% end %>
-      </h2>
+      </h1>
 
       <div class="metadata">
         Posted under 
