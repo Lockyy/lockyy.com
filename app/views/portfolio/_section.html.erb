@@ -2,9 +2,9 @@
 	<div class="<%= "subsection" if subsection %>">
 		
 		<% unless section.name.blank? %>
-			<h3>
+			<h2>
 			<%= markdown(section.name) %>
-			</h3>
+			</h2>
 		<% end %>
 		
 		<%= markdown(section.description) %>
