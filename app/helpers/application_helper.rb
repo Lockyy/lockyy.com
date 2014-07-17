@@ -1,8 +1,7 @@
 module ApplicationHelper
 
   def markdown(blogtext)
-    renderOptions = { hard_wrap: true, 
-                      filter_html: true }
+    renderOptions = { hard_wrap: true }
 
     markdownOptions = { autolink: true, 
                         no_intra_emphasis: true, 
