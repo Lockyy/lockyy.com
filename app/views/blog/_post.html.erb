@@ -1,33 +1,31 @@
-<div class="row wrapper padded" id="portfolio-section">
-  <div class="span12">
-    <div class="section">
-      <div class="box">
+<div class="row">
+  <div class="col-lg-12">
+    <div class="section wrapper padded">
 
-        <h1>
-          <% if action_name == 'index' %>
-            <%= link_to markdown(post.title), 
-                        post_path(post.blog_category, post) %>
-          <% else %>
-            <%= markdown(post.title) %>
-          <% end %>
-        </h1>
+      <h2>
+        <% if action_name == 'index' %>
+          <%= link_to markdown(post.title), 
+                      post_path(post.blog_category, post) %>
+        <% else %>
+          <%= markdown(post.title) %>
+        <% end %>
+      </h2>
 
-        <div class="metadata">
-          Posted under 
-          <%= link_to post.blog_category.title,
-                      post_category_path(post.blog_category) %>
-        </div>
-
-        <div class="content">
-          <% if action_name == 'index' %>
-            <%= markdown(truncate(post.content, length: 250, separator: "\n", omission: '')) %>
-            <%= link_to 'Read more', post_path(post.blog_category, post) %>
-          <% else %>
-            <%= markdown(post.content) %>
-          <% end %>
-        </div>
-
+      <div class="metadata">
+        Posted under 
+        <%= link_to post.blog_category.title,
+                    post_category_path(post.blog_category) %>
       </div>
+
+      <div class="content">
+        <% if action_name == 'index' %>
+          <%= markdown(truncate(post.content, length: 250, separator: "\n", omission: '')) %>
+          <%= link_to 'Read more', post_path(post.blog_category, post) %>
+        <% else %>
+          <%= markdown(post.content) %>
+        <% end %>
+      </div>
+
     </div>
   </div>
 </div>

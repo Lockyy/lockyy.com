@@ -35,19 +35,23 @@ body {
 /* Typography */
 
 h1 {
-	margin-top: 0;
-	font-size: 26px;
+	font-size: 30px;
 	font-weight: 100;
 }
 
 h2 {
+	font-size: 26px;
+	font-weight: 100;
+}
+
+h3 {
 	margin-top: 30px;
 	margin-bottom: 15px;
 	font-size: 24px;
 	font-weight: 100;
 }
 
-h3 {
+h4 {
 	margin-top: 25px;
 	margin-bottom: 15px;
 	font-size: 22px;
@@ -67,9 +71,6 @@ a {
 	}
 }
 
-.title {
-	font-size: 30px;
-}
 
 .links {
 	font-size: 25px;
@@ -79,11 +80,11 @@ a {
 	}
 }
 
+
 .bio-line {
 	text-align: center;
-	margin: 10px;
 	p {
-		margin-bottom: 0px;
+		margin-bottom: 5px;
 	}
 }
 
@@ -91,13 +92,19 @@ a {
 
 @media screen and (min-width: 1024px) {
 	.padded {
+		padding: 75px;
+	}
+	.bio {
 		padding: 50px;
 	}
 }
 
 @media screen and (max-width: 1024px) {
 	.padded {
-		padding: 20px;
+		padding: 25px;
+	}
+	.bio {
+		padding: 25px;
 	}
 }
 
@@ -149,12 +156,6 @@ a {
 
 /* Portfolio layout */
 
-.box {
-	margin: 10px;
-	margin-bottom: 0px;
-	padding: 10px;
-}
-
 .section {
 	.title {
 		font-size: 24px;
@@ -172,7 +173,7 @@ a {
 }
 
 .subsection-items {
-	margin-left: 8px;
+	margin-left: 12px;
 }
 
 .item {
