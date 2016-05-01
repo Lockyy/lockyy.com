@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: lockyy_com_development
+
+test:
+  <<: *default
+  database: lockyy_com_test
+
+production:
+  <<: *default
+  database: lockyy_com_production
+  username: deploy
+  password: <%= ENV['DATABASE_PASSWORD'] %>
