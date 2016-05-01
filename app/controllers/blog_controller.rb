@@ -1,22 +1,20 @@
 class BlogController < ApplicationController
-  
   def index
-    if params[:category]
-      @posts = BlogPost.category_find(params[:category])
-    else
-      @posts = BlogPost.viewable
-    end
+    @posts = if params[:category]
+               BlogPost.category_find(params[:category])
+             else
+               BlogPost.viewable
+             end
   end
 
   def show
-  	@post = BlogPost.friendly.find_by_slug(params[:id])
+    @post = BlogPost.friendly.find_by_slug(params[:id])
 
-    if @post
+    if @post && @post.viewable?
       @post.log_visit
       if request.path != post_path(@post.blog_category, @post)
         redirect_to post_path(@post.blog_category, @post), status: :moved_permanently
       end
     end
   end
-
 end
