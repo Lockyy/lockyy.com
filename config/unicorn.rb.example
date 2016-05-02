@@ -6,10 +6,11 @@
 # See also http://unicorn.bogomips.org/examples/unicorn.conf.rb for
 # a more verbose configuration using more features.
 
-listen 2000 # by default Unicorn listens on port 8080
+listen 8080 # by default Unicorn listens on port 8080
 worker_processes 2 # this should be >= nr_cpus
 APP_PATH = "/path/to/app"
 
-pid "/tmp/lockyy_unicorn.pid"
+pid "#{APP_PATH}/tmp/pids/unicorn.pid"
+listen "#{APP_PATH}/tmp/sockets/unicorn.sock", :backlog => 64
 stderr_path "#{APP_PATH}/log/unicorn_error.log"
 stdout_path "#{APP_PATH}/log/unicorn_out.log"

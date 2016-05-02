@@ -8,8 +8,8 @@ class BlogController < ApplicationController
 
     if @post && @post.visible?
       @post.log_visit
-      if request.path != post_path(@post.blog_category, @post)
-        redirect_to post_path(@post.blog_category, @post), status: :moved_permanently
+      if request.path != post_path(@post.category, @post)
+        redirect_to post_path(@post.category, @post), status: :moved_permanently
       end
     end
   end

@@ -7,9 +7,9 @@ ActiveAdmin.register Bio, as: 'Landing Message' do
     actions
   end
 
-  show do
+  show do |bio|
     panel 'Landing page content' do
-      div :content
+      div bio.content
     end
   end
 
