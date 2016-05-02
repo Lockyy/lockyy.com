@@ -10,6 +10,6 @@ listen 2000 # by default Unicorn listens on port 8080
 worker_processes 2 # this should be >= nr_cpus
 APP_PATH = "/path/to/app"
 
-pid "#{APP_PATH}/pids/unicorn.pid"
+pid "/tmp/lockyy_unicorn.pid"
 stderr_path "#{APP_PATH}/log/unicorn_error.log"
 stdout_path "#{APP_PATH}/log/unicorn_out.log"
