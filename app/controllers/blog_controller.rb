@@ -4,7 +4,7 @@ class BlogController < ApplicationController
   end
 
   def show
-    @post = Blog::Post.friendly.find_by(slug: params[:id])
+    @post = Blog::Post.friendly.find(params[:id])
 
     if @post && @post.visible?
       @post.log_visit
@@ -18,7 +18,7 @@ class BlogController < ApplicationController
 
   def posts(category_slug)
     if params[:category]
-      category = Blog::Category.friendly.find_by(slug: params[:category])
+      category = Blog::Category.friendly.find(params[:category])
       return category.posts.visible
     end
     Blog::Post.visible
