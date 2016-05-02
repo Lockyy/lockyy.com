@@ -33,4 +33,6 @@ group :development do
   gem 'binding_of_caller', '~> 0.7.2'
   gem 'brakeman', '~> 3.2.1'
   gem 'rubocop', '~> 0.39.0'
+  gem 'mina', github: 'nadarei/mina'
+  gem 'mina-nginx', '~> 0.0.1', :require => false
 end
