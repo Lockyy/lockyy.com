@@ -10,9 +10,9 @@ $lightBlue : #7AA4D0;
 $veryLightBlue: #AABDD1;
 
 @media (min-width: 1200px) {
-    .container{
-        max-width: 970px;
-    }
+  .container{
+    max-width: 970px;
+  }
 }
 
 code {
@@ -51,15 +51,20 @@ h2 {
 h3 {
 	margin-top: 30px;
 	margin-bottom: 15px;
-	font-size: 24px;
+	font-size: 22px;
 	font-weight: 100;
 }
 
 h4 {
 	margin-top: 25px;
 	margin-bottom: 15px;
-	font-size: 22px;
+	font-size: 20px;
 	font-weight: 100;
+}
+
+.underlined-title {
+	border-bottom: 1px solid $veryLightBlue;
+  padding-bottom: 5px;
 }
 
 .metadata {
@@ -75,7 +80,7 @@ a {
 	}
 }
 
-.content { 
+.content {
 	h2 {
 		a {
 			text-decoration: none;
@@ -91,6 +96,9 @@ a {
 	}
 }
 
+p {
+	margin: 0px;
+}
 
 .bio-line {
 	text-align: center;
@@ -103,7 +111,10 @@ a {
 
 @media screen and (min-width: 1024px) {
 	.padded {
-		padding: 75px;
+		padding: 50px;
+		h2 {
+			margin-top: 0px;
+		}
 	}
 	.bio {
 		padding: 50px;
@@ -113,6 +124,9 @@ a {
 @media screen and (max-width: 1024px) {
 	.padded {
 		padding: 25px;
+		h2 {
+			margin-top: 0px;
+		}
 	}
 	.bio {
 		padding: 25px;
@@ -192,10 +206,6 @@ img {
 		font-size: 24px;
 		line-height: 23px;
 	}
-}
-
-.subsection-items {
-	margin-left: 12px;
 }
 
 .item {

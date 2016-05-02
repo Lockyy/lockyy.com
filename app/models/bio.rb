@@ -1,9 +1,12 @@
 class Bio < ActiveRecord::Base
-  default_scope { order 'position' }
+  before_destroy :ensure_one
 
-  def self.cached_bio_lines
-    Rails.cache.fetch([name, 'bio-lines'], expires_in: 5.minutes) do
-      Bio.all.to_a
+  private
+
+  def ensure_one
+    unless Bio.all.length > 1
+      errors.add(:bio, 'cannot delete when only bio')
+      false
     end
   end
 end

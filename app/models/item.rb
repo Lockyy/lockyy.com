@@ -1,5 +1,5 @@
 class Item < ActiveRecord::Base
-  default_scope order 'section_id, position'
+  default_scope { order 'section_id, position' }
 
   belongs_to :section, touch: true
 

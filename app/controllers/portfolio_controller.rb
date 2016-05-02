@@ -1,5 +1,5 @@
 class PortfolioController < ApplicationController
   def show
-    @sections = Section.cached_sections
+    @sections = Section.top_level
   end
 end

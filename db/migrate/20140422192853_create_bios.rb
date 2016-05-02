@@ -1,9 +1,8 @@
 class CreateBios < ActiveRecord::Migration
   def self.up
     create_table :bios do |t|
-      t.text :content
-      t.integer :order
-      
+      t.text    :content
+
       t.timestamps
     end
   end

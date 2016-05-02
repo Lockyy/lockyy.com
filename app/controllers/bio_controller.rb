@@ -1,5 +1,5 @@
 class BioController < ApplicationController
   def show
-    @bio = Bio.cached_bio_lines
+    @bio = Bio.first
   end
 end

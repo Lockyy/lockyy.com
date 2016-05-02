@@ -4,23 +4,23 @@
 
       <h1>
         <% if action_name == 'index' %>
-          <%= link_to markdown(post.title), 
-                      post_path(post.blog_category, post) %>
+          <%= link_to markdown(post.title),
+                      post_path(post.category, post) %>
         <% else %>
           <%= markdown(post.title) %>
         <% end %>
       </h1>
 
       <div class="metadata">
-        Posted under 
-        <%= link_to post.blog_category.title,
-                    post_category_path(post.blog_category) %>
+        Posted under
+        <%= link_to post.category.title,
+                    post_category_path(post.category) %>
       </div>
 
       <div class="content">
         <% if action_name == 'index' %>
           <%= markdown(truncate(post.content, length: 250, separator: "\n", omission: '')) %>
-          <%= link_to 'Read more', post_path(post.blog_category, post) %>
+          <%= link_to 'Read more', post_path(post.category, post) %>
         <% else %>
           <%= markdown(post.content) %>
         <% end %>

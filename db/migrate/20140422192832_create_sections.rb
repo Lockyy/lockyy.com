@@ -1,10 +1,11 @@
 class CreateSections < ActiveRecord::Migration
   def self.up
     create_table :sections do |t|
-      t.string :name
-      t.text :description
-      t.integer :order
-      
+      t.string  :name
+      t.text    :description
+      t.integer :position
+      t.integer :section_id
+
       t.timestamps
     end
   end
