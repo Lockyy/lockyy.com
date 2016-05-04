@@ -11,6 +11,6 @@ class Suggestion < ActiveRecord::Base
   private
 
   def send_to_email
-    SuggestionMailer.suggestion(self).deliver_now
+    SuggestionMailer.suggestion(email, self).deliver_now
   end
 end
