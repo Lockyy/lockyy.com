@@ -1,17 +1,17 @@
 <div class='wrapper padded'>
-	<div class="section">
-		<div class="<%= "subsection" if subsection %>">
+  <div class="section">
+    <div class="<%= "subsection" if subsection %>">
 
-			<% unless section.name.blank? %>
-				<h2 class='underlined-title'><%= markdown(section.name) %></h2>
-			<% end %>
+      <% unless section.name.blank? %>
+        <h2 class='underlined-title'><%= markdown(section.name) %></h2>
+      <% end %>
 
-			<%= markdown(section.description) %>
+      <%= markdown(section.description) %>
 
-		</div>
-		<div class="subsection-items">
-			<%= render partial: 'item', collection: section.items %>
-			<%= render partial: 'section', collection: section.subsections, locals: { subsection: true } %>
-		</div>
-	</div>
+    </div>
+    <div class="subsection-items">
+      <%= render partial: 'item', collection: section.items %>
+      <%= render partial: 'section', collection: section.subsections, locals: { subsection: true } %>
+    </div>
+  </div>
 </div>

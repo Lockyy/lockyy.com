@@ -1,0 +1,73 @@
+.sub-wrapper
+  width: 100%
+  height: 100%
+  position: absolute
+  top: 0px
+  left: 0px
+  overflow: hidden
+
+  .sub-container
+    position: absolute
+    bottom: -258px
+    right: 10px
+    transition: 0.2s
+
+    &.visible
+      bottom: 10px
+
+    #sub-button
+      +white-box
+      -webkit-border-bottom-right-radius: 0px
+      -webkit-border-bottom-left-radius: 0px
+      -moz-border-radius-bottomright: 0px
+      -moz-border-radius-bottomleft: 0px
+      border-bottom-right-radius: 0px
+      border-bottom-left-radius: 0px
+      position: absolute
+      right: 10px
+      bottom: calc(100% - 1px)
+      padding: 5px 10px
+      cursor: pointer
+      border: 1px solid $darkBlue
+      border-bottom: 0px
+
+    .sub-main-box
+      +white-box
+      padding: 15px
+      padding-bottom: 20px
+      width: 468px
+      border: 1px solid $darkBlue
+
+      input, textarea
+        width: 100%
+
+      input[type='text'], textarea
+        border: 1px solid grey
+        padding: 5px
+        padding-left: 5px
+        padding-right: 5px
+
+      textarea
+        resize: none
+        height: 100px
+        margin-bottom: 10px
+
+      input[type='text']
+        margin-bottom: 4px
+
+      input[type='submit']
+        background: $green
+        padding: 10px
+        color: white
+        border: 0px
+        border-radius: 2px
+
+      #thanks
+        display: none
+        &.visible
+          display: block
+          & + .sub-message
+            display: none
+
+      .sub-message, #thanks
+        margin-bottom: 10px

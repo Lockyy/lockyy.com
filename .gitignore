@@ -16,3 +16,5 @@ doc/
 config/unicorn.rb
 config/database.yml
 config/deploy.rb
+
+.byebug_history

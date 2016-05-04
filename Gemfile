@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.2.3'
 
 # Core
 gem 'rails', '~> 4.2.6'
@@ -12,6 +12,7 @@ gem 'quiet_assets', '~> 1.1.0'
 gem 'redcarpet', '~> 3.3.4'
 gem 'friendly_id', '~> 5.1.0'
 gem 'devise', '~> 3.2'
+gem 'mailchimp-api', require: 'mailchimp'
 
 # Frontend functionality
 gem 'activeadmin', '~> 1.0.0.pre2'
@@ -25,7 +26,6 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'uglifier', '~> 3.0.0'
 gem 'coffee-rails', '~> 4.1.1'
 gem 'jquery-rails', '~> 4.1.1'
-gem 'turbolinks', '~> 2.5.3s'
 
 group :development do
   gem 'rack-mini-profiler', '~> 0.9.9'
@@ -35,4 +35,5 @@ group :development do
   gem 'rubocop', '~> 0.39.0'
   gem 'mina', github: 'nadarei/mina'
   gem 'mina-nginx', '~> 0.0.1', :require => false
+  gem 'byebug'
 end

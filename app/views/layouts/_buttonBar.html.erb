@@ -1,26 +1,27 @@
 <div class="links pushUp">
-	<span>
-		<%= link_to "Bio", 
-					root_path,
-					id: "bio-link" %>
-	</span>
-	<span>
-		<%= link_to "Portfolio", 
-					portfolio_path,
-					id: "portfolio-link" %>
-	</span>
-	<span>
-		<%= link_to "Posts", 
-					posts_path,
-					id: "posts-link" %>
-	</span>
-	<span>
-		<%= link_to "Github", 
-					"http://github.com/lockyy",
-					id: "github-link" %>
-	</span>
-	<span>
-		<%= mail_to "daniel@lockyy.com",
-					"Contact me" %>
-	</span>
+  <span>
+    <%= link_to "Bio",
+                root_path,
+                id: "bio-link" %>
+  </span>
+  <span>
+    <%= link_to "Portfolio",
+              portfolio_path,
+              id: "portfolio-link" %>
+  </span>
+  <span>
+    <%= link_to "Posts",
+                posts_path,
+                id: "posts-link" %>
+  </span>
+  <span>
+    <%= link_to "Github",
+                "http://github.com/lockyy",
+                id: "github-link",
+                target: '_blank' %>
+  </span>
+  <span>
+    <%= mail_to "daniel@lockyy.com",
+                "Contact me" %>
+  </span>
 </div>

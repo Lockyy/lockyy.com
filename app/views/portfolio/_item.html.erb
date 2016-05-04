@@ -1,9 +1,9 @@
 <div class="box item">
-	<h3>
-		<%= item.link.blank? ? item.name : link_to(markdown("#{item.name}"), item.link) %>
-	</h3>
+  <h3>
+    <%= item.link.blank? ? item.name : link_to(markdown("#{item.name}"), item.link) %>
+  </h3>
 
-	<div class="content">
-		<%= markdown(item.content) %>
-	</div>
+  <div class="content">
+    <%= markdown(item.content) %>
+  </div>
 </div>

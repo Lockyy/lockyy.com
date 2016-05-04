@@ -1,0 +1,209 @@
+html, body {
+  height: 100%;
+}
+
+@media (min-width: 1200px) {
+  .container{
+    max-width: 970px;
+  }
+}
+
+code {
+  padding: 0;
+  font-size: 13px;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.content {
+  overflow: scroll;
+  height: 100%
+}
+
+body {
+  background: $greyBlue;
+  color: $veryLightBlue;
+  font-family: 'Lato', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  padding-bottom: 70px;
+}
+
+/* Typography */
+
+h1 {
+  margin-top: 0px;
+  font-size: 30px;
+  font-weight: 100;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 100;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 100;
+}
+
+h4 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.underlined-title {
+  border-bottom: 1px solid $veryLightBlue;
+  padding-bottom: 5px;
+}
+
+.metadata {
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+a {
+  color: inherit;
+  &:hover, &:focus {
+    color: $lightBlue;
+    text-decoration: none;
+  }
+}
+
+.content {
+  h2 {
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.links {
+  font-size: 25px;
+  span {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+
+p {
+  margin: 0px;
+}
+
+.bio-line {
+  text-align: center;
+  p {
+    margin-bottom: 5px;
+  }
+}
+
+/* Layout */
+
+@media screen and (min-width: 1024px) {
+  .padded {
+    padding: 50px;
+    h2 {
+      margin-top: 0px;
+    }
+  }
+  .bio {
+    padding: 50px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .padded {
+    padding: 25px;
+    h2 {
+      margin-top: 0px;
+    }
+  }
+  .bio {
+    padding: 25px;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0px 0px 70px 2px #999999;
+  border-radius: $standard-border-radius;
+}
+
+.wrapper {
+  @include white-box;
+  margin-bottom: 30px;
+  margin-top: 5px;
+}
+
+.pushDown {
+  margin-top: 25px;
+}
+
+.pushUp{
+  margin-bottom: 25px;
+}
+
+.navigation-button-bar {
+  margin-top: 145px;
+}
+
+/* Design Styling */
+
+.navbar-inner {
+  background: $greyBlue;
+  text-align: center;
+}
+
+.navigation-link {
+  border-radius: $standard-border-radius;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  background: $greyBlue;
+  color: $lightBlue;
+  border: 2px solid #476079;
+  margin-right: 5px;
+}
+
+.currentPage {
+  color: $blue;
+}
+
+/* Portfolio layout */
+
+.section {
+  .title {
+    font-size: 24px;
+    line-height: 25px;
+  }
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.subsection {
+  .title {
+    font-size: 24px;
+    line-height: 23px;
+  }
+}
+
+.item {
+  margin-top: 0px;
+  .title {
+    font-size: 20px;
+    line-height: 21px;
+  }
+}

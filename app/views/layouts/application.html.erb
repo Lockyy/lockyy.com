@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title><%= full_title(yield(:title)) %></title>
-		<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-		<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-		<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
-		<%= favicon_link_tag 'favicon.ico' %>
-		<%= csrf_meta_tags %>
-		<%= render 'layouts/shim' %>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	</head>
-	<body>
-		<%= render 'layouts/header' %>
-		<div class="container">
-			<%= yield %>
-		</div>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    <%= favicon_link_tag 'favicon.ico' %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/shim' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  </head>
+  <body>
+    <div class='sub-wrapper'>
 
-		<footer>
-			<%= render 'layouts/footer' %>
-		</footer>
-	</body>
+      <div class="content">
+        <%= render 'layouts/header' %>
+
+        <div class="container">
+          <%= yield %>
+        </div>
+
+        <footer>
+          <%= render 'layouts/footer' %>
+        </footer>
+      </div>
+
+
+      <%= render partial: 'layouts/subscribe' %>
+    </div>
+  </body>
 </html>
