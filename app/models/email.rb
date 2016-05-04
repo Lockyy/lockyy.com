@@ -14,5 +14,6 @@ class Email < ActiveRecord::Base
       "euid"  => id,
       "leid"  => id,
     })
+  rescue
   end
 end
