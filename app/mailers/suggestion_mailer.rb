@@ -1,7 +1,7 @@
 class SuggestionMailer < ApplicationMailer
   default from: 'suggestions@lockyy.com'
 
-  def suggestion(email, suggestion)
+  def suggestion(suggestion)
     @suggestion = suggestion
     mail(from: @suggestion.suggester_email,
          to: ENV['SUGGESTION_BOX_EMAIL'],
