@@ -26,8 +26,8 @@ group :development do
   gem 'binding_of_caller', '~> 0.8'
   gem 'brakeman', '~> 3.7'
   gem 'byebug', '~> 8.2'
-  gem 'mina', github: 'nadarei/mina'
-  gem 'mina-nginx', '~> 0.0', require: false
+  gem 'mina', '0.3.8'
+  gem 'mina-nginx', '0.0.1', require: false
   gem 'rack-mini-profiler', '~> 0.10'
   gem 'rubocop', '~> 0.52'
 end
