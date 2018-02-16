@@ -1,5 +1,4 @@
 ActiveAdmin.register Bio, as: 'Landing Message' do
-
   permit_params :content
 
   index do
@@ -12,5 +11,4 @@ ActiveAdmin.register Bio, as: 'Landing Message' do
       div bio.content
     end
   end
-
 end

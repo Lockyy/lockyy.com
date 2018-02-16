@@ -16,7 +16,7 @@ class BlogController < ApplicationController
 
   private
 
-  def posts(category_slug)
+  def posts(_category_slug)
     if params[:category]
       category = Blog::Category.friendly.find(params[:category])
       return category.posts.visible

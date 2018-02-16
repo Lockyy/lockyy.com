@@ -1,23 +1,36 @@
-class Blog::Category < ActiveRecord::Base
-  extend FriendlyId
-  friendly_id :title, use: [:slugged, :finders]
+# == Schema Information
+#
+# Table name: categories
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  slug       :string
+#  created_at :datetime
+#  updated_at :datetime
+#
 
-  has_many :posts
+module Blog
+  class Category < ApplicationRecord
+    extend FriendlyId
+    friendly_id :title, use: %i[slugged finders]
 
-  validates :title, presence: true, uniqueness: :true, length: { maximum: 40 }
+    has_many :posts
 
-  before_destroy :prevent_destroy_when_posts
+    validates :title, presence: true, uniqueness: :true, length: { maximum: 40 }
 
-  private
+    before_destroy :prevent_destroy_when_posts
 
-  def prevent_destroy_when_posts
-    unless posts.length < 1
-      errors.add(:category, 'cannot delete when posts exist for it ')
-      false
+    private
+
+    def prevent_destroy_when_posts
+      unless posts.empty?
+        errors.add(:category, 'cannot delete when posts exist for it ')
+        false
+      end
     end
-  end
 
-  def should_generate_new_friendly_id?
-    true
+    def should_generate_new_friendly_id?
+      true
+    end
   end
 end

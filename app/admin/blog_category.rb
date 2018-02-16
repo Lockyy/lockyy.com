@@ -5,12 +5,14 @@ ActiveAdmin.register Blog::Category do
     inputs do
       input :title
     end
-    panel 'Category info' do
-      ul do
-        li "Total posts: #{@resource.posts.length}"
-        li "Slug: #{@resource.slug}"
+    unless f.object.new_record?
+      panel 'Category info' do
+        ul do
+          li "Total posts: #{@resource.posts.length}"
+          li "Slug: #{@resource.slug}"
+        end
       end
-    end unless f.object.new_record?
+    end
     actions
   end
 

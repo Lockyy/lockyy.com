@@ -50,9 +50,8 @@ ActiveRecord::Schema.define(version: 20160503224144) do
 
   create_table "emails", force: :cascade do |t|
     t.string   "email"
-    t.boolean  "unsubscribed", default: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

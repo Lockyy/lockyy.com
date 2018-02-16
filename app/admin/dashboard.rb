@@ -1,12 +1,10 @@
-ActiveAdmin.register_page "Dashboard" do
+ActiveAdmin.register_page 'Dashboard' do
+  menu priority: 1, label: proc { I18n.t('active_admin.dashboard') }
 
-  menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
-
-  content title: proc{ I18n.t("active_admin.dashboard") } do
-
+  content title: proc { I18n.t('active_admin.dashboard') } do
     columns do
       column do
-        panel "Recent Posts" do
+        panel 'Recent Posts' do
           ul do
             Blog::Post.recent(5).map do |post|
               li do
@@ -21,7 +19,7 @@ ActiveAdmin.register_page "Dashboard" do
       end
 
       column do
-        panel "Most Viewed Posts" do
+        panel 'Most Viewed Posts' do
           ul do
             Blog::Post.most_viewed.first(5).map do |post|
               li do

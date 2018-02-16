@@ -1,6 +1,5 @@
 ActiveAdmin.register Section, as: 'Portfolio Section' do
-
- permit_params :section_id, :name, :description, :position
+  permit_params :section_id, :name, :description, :position
 
   show do |section|
     attributes_table do
@@ -27,5 +26,4 @@ ActiveAdmin.register Section, as: 'Portfolio Section' do
       end
     end
   end
-
 end

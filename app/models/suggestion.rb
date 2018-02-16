@@ -1,4 +1,17 @@
-class Suggestion < ActiveRecord::Base
+# == Schema Information
+#
+# Table name: suggestions
+#
+#  id         :integer          not null, primary key
+#  email_id   :integer
+#  suggestion :string
+#  done       :boolean          default(FALSE)
+#  good       :boolean
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+class Suggestion < ApplicationRecord
   belongs_to :email
   validates :suggestion, presence: true
 

@@ -79,12 +79,12 @@ Lockyy::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   ActionMailer::Base.smtp_settings = {
-    :user_name => ENV['SMTP_USERNAME'],
-    :password => ENV['SMTP_PASSWORD'],
-    :domain => 'lockyy.com',
-    :address => ENV['SMTP_PROVIDER_ADDRESS'],
-    :port => ENV['SMTP_PORT'],
-    :authentication => :plain,
-    :enable_starttls_auto => true
+    user_name:            ENV['SMTP_USERNAME'],
+    password:             ENV['SMTP_PASSWORD'],
+    domain:               'lockyy.com',
+    address:              ENV['SMTP_PROVIDER_ADDRESS'],
+    port:                 ENV['SMTP_PORT'],
+    authentication:       :plain,
+    enable_starttls_auto: true,
   }
 end

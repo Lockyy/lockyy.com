@@ -4,8 +4,8 @@ class SuggestionMailer < ApplicationMailer
   def suggestion(email, suggestion)
     @email = email
     @suggestion = suggestion
-    mail(from: @suggestion.suggester_email,
-         to: ENV['SUGGESTION_BOX_EMAIL'],
+    mail(from:    @suggestion.suggester_email,
+         to:      ENV['SUGGESTION_BOX_EMAIL'],
          subject: 'Suggestion from website')
   end
 end

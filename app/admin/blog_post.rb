@@ -8,12 +8,14 @@ ActiveAdmin.register Blog::Post do
       input :content
       input :visible, as: :boolean
     end
-    panel 'Post info' do
-      ul do
-        li "Total views: #{@resource.views}"
-        li "Slug: #{@resource.slug}"
+    unless f.object.new_record?
+      panel 'Post info' do
+        ul do
+          li "Total views: #{@resource.views}"
+          li "Slug: #{@resource.slug}"
+        end
       end
-    end unless f.object.new_record?
+    end
     actions
   end
 
