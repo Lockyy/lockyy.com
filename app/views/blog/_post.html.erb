@@ -17,7 +17,7 @@
                     post_category_path(post.category) %>
       </div>
 
-      <div class="content">
+      <div class="markdown-body">
         <% if action_name == 'index' %>
           <%= markdown(truncate(post.content, length: 250, separator: "\n", omission: '')) %>
           <%= link_to 'Read more', post_path(post.category, post) %>
