@@ -4,14 +4,10 @@ class BlogController < ApplicationController
   end
 
   def show
-    @post = Blog::Post.friendly.find(params[:id])
+    @post = Blog::Post.visible.friendly.find(params[:id])
+    @post.log_visit
 
-    if @post && @post.visible?
-      @post.log_visit
-      if request.path != post_path(@post.category, @post)
-        redirect_to post_path(@post.category, @post), status: :moved_permanently
-      end
-    end
+    check_for_changed_slug
   end
 
   private
@@ -22,5 +18,10 @@ class BlogController < ApplicationController
     category = Blog::Category.friendly.find(category_slug)
     category.posts.visible
   end
+
+  def check_for_changed_slug
+    return if request.path == post_path(@post.category, @post)
+
+    redirect_to post_path(@post.category, @post), status: :moved_permanently
   end
 end
