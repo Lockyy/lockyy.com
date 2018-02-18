@@ -25,13 +25,10 @@ module Blog
     validates :category, presence: true
 
     scope :most_viewed, -> { order(:views) }
+    scope :visible, -> { where('visible_at < ?', Time.zone.now).where(visible: true) }
 
     def self.recent(number)
       all.last(number)
-    end
-
-    def self.visible
-      where('created_at < ?', Time.now).where(visible: true)
     end
 
     def visible?

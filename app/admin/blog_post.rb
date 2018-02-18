@@ -1,11 +1,12 @@
 ActiveAdmin.register Blog::Post do
-  permit_params :title, :category_id, :content, :visible
+  permit_params :title, :category_id, :content, :visible, :visible_at
 
   form do |f|
     inputs do
       input :category, as: :select, values: Blog::Category.all, include_blank: 'Select one'
       input :title
       input :content
+      input :visible_at
       input :visible, as: :boolean
     end
     unless f.object.new_record?
@@ -28,6 +29,7 @@ ActiveAdmin.register Blog::Post do
     end
     column :views
     column :visible
+    column :visible_at
     column :created_at
     actions
   end
