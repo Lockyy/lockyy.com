@@ -6,7 +6,7 @@ ActiveAdmin.register Blog::Post do
       input :category, as: :select, values: Blog::Category.all, include_blank: 'Select one'
       input :title
       input :content
-      input :visible_at
+      input :visible_at, as: :datepicker
       input :visible, as: :boolean
     end
     unless f.object.new_record?
