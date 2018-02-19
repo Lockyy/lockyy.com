@@ -91,6 +91,8 @@ GEM
     dotenv-rails (2.2.1)
       dotenv (= 2.2.1)
       railties (>= 3.2, < 5.2)
+    email_validator (1.6.0)
+      activemodel
     erubi (1.7.0)
     erubis (2.7.0)
     excon (0.60.0)
@@ -255,6 +257,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 3.5)
   dotenv-rails (~> 2.2)
+  email_validator
   friendly_id (~> 5.2)
   jquery-rails (~> 4.3)
   kaminari (~> 0.17)

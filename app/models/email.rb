@@ -11,7 +11,7 @@
 class Email < ApplicationRecord
   has_many :suggestions
 
-  validates :email, presence: true, format: { with: /.+\@.+\..+/, message: 'must be an email' }
+  validates :email, presence: true, email: true, uniqueness: true
 
   after_create :send_to_mailchimp
 
