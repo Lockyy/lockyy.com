@@ -1,0 +1,11 @@
+<div class='row'>
+  <div class='col-xs-12'>
+    <div class='alerts'>
+      <% flash.each do |key, flash| %>
+        <div class='alert alert-<%= key %>'>
+          <%= flash %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

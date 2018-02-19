@@ -1,0 +1,12 @@
+button = $('#subscribe')
+oldText = button.val()
+button.val('<%= params[:suggestion].blank? ? 'Subscribed' : 'Subscribed. Thanks for the suggestion!' %>')
+setTimeout(function() {
+  button.val(oldText)
+  $('.sub-container #email').val('')
+  $('.sub-container #suggestion').val('')
+  $('.sub-container #sub-button').html('Subscribe')
+}, 2050)
+setTimeout(function() {
+  $('.sub-container').removeClass('visible')
+}, 2000)
