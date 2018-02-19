@@ -1,18 +1,14 @@
 class EmailController < ApplicationController
   def create
-    @email = Email.find_or_create_by(email: params[:email].strip.downcase)
-
-    if params[:suggestion] && @email.persisted?
-      @suggestion = @email.suggestions.create(suggestion: params[:suggestion])
-    end
+    @email_address = params[:email].strip.downcase
+    Suggestion.create(suggestion: suggestion_string, email: @email_address) if suggestion_string
+    return render(:could_not_create) unless MailchimpList.add(@email_address)
   end
 
   def destroy
     email_address = params[:email].strip.downcase
 
-    Email.where(email: email_address).each(&:destroy)
-
-    flash_message = if check_email_deleted(email_address)
+    flash_message = if MailchimpList.remove(email_address)
                       failed_flash_message(email_address)
                     else
                       successful_flash_message(email_address)
@@ -23,11 +19,10 @@ class EmailController < ApplicationController
 
   private
 
-  def check_email_deleted(email)
-    email = Email.find_by(email: email)
-    EmailMailer.failure(email).deliver_now if email.present?
-    email.present?
+  def suggestion_string
+    params[:suggestion]
   end
+  helper_method :suggestion_string
 
   def failed_flash_message(email)
     {

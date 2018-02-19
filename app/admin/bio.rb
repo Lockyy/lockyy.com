@@ -1,5 +1,6 @@
 ActiveAdmin.register Bio, as: 'Landing Message' do
   permit_params :content
+  menu priority: 2
 
   index do
     column :content

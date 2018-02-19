@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180218233053) do
+ActiveRecord::Schema.define(version: 20180219233321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,12 +47,6 @@ ActiveRecord::Schema.define(version: 20180218233053) do
   end
 
   add_index "categories", ["slug"], name: "index_categories_on_slug", using: :btree
-
-  create_table "emails", force: :cascade do |t|
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -101,12 +95,12 @@ ActiveRecord::Schema.define(version: 20180218233053) do
   end
 
   create_table "suggestions", force: :cascade do |t|
-    t.integer  "email_id"
     t.string   "suggestion"
     t.boolean  "done",       default: false
     t.boolean  "good"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.string   "email"
   end
 
 end

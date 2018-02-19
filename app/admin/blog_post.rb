@@ -1,5 +1,6 @@
 ActiveAdmin.register Blog::Post do
   permit_params :title, :category_id, :content, :visible, :visible_at
+  menu priority: 6
 
   form do |f|
     inputs do

@@ -1,6 +1,6 @@
 button = $('#subscribe')
 oldText = button.val()
-button.val('<%= successful_subscribe_message(@email_address, suggestion_string) %>')
+button.val('<%= failed_subscribe_message(@email_address, suggestion_string) %>')
 setTimeout(function() {
   button.val(oldText)
   $('.sub-container #email').val('')

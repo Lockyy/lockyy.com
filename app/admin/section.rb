@@ -1,5 +1,6 @@
 ActiveAdmin.register Section, as: 'Portfolio Section' do
   permit_params :section_id, :name, :description, :position
+  menu priority: 3
 
   show do |section|
     attributes_table do

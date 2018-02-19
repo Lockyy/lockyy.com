@@ -1,5 +1,6 @@
 ActiveAdmin.register Blog::Category do
   permit_params :title
+  menu priority: 5
 
   form do |f|
     inputs do
