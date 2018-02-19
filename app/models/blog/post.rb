@@ -29,7 +29,7 @@ module Blog
     scope :most_viewed, -> { order(:views) }
     scope :visible, -> { where('visible_at < ?', Time.zone.now).where(visible: true) }
 
-    before_validation -> { self.visible_at = Time.zone.now }, if: -> { self.visible_at.nil? },
+    before_validation -> { self.visible_at = Time.zone.now }, if: -> { visible_at.nil? },
                                                               on: :create
 
     def self.recent(number)
