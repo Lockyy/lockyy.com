@@ -40,11 +40,6 @@ module Blog
       visible && (created_at < Time.now)
     end
 
-    def log_visit
-      self.views += 1
-      save
-    end
-
     def should_generate_new_friendly_id?
       true
     end

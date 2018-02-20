@@ -5,12 +5,29 @@ class BlogController < ApplicationController
 
   def show
     @post = Blog::Post.visible.friendly.find(params[:id])
-    @post.log_visit
+    handle_view
 
-    check_for_changed_slug
+    new_url_redirect if slug_changed?
   end
 
   private
+
+  def handle_view
+    @post.increment!(:views) if view_incrementable?
+    session[session_key] = Time.zone.now
+  end
+
+  def session_key
+    "viewed_#{@post.id}"
+  end
+
+  def view_incrementable?
+    current_admin_user.blank? && !recently_viewed?
+  end
+
+  def recently_viewed?
+    session[session_key].present? && session[session_key] > Time.zone.now - 5.seconds
+  end
 
   def posts(category_slug)
     return Blog::Post.visible unless category_slug
@@ -19,9 +36,11 @@ class BlogController < ApplicationController
     category.posts.visible
   end
 
-  def check_for_changed_slug
-    return if request.path == post_path(@post.category, @post)
+  def slug_changed?
+    request.path != post_path(@post.category, @post)
+  end
 
+  def new_url_redirect
     redirect_to post_path(@post.category, @post), status: :moved_permanently
   end
 end
