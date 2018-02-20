@@ -24,4 +24,10 @@
     <%= mail_to "daniel@lockyy.com",
                 "Contact me" %>
   </span>
+  <% if current_admin_user.present? %>
+    <span>
+      <%= link_to "Admin Interface",
+                  '/admin' %>
+    </span>
+  <% end %>
 </div>
