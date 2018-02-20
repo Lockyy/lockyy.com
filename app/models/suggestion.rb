@@ -14,6 +14,7 @@
 class Suggestion < ApplicationRecord
   validates :suggestion, presence: true
   validates :email, presence: true, email: true
+  validates :path, presence: true
 
   after_create :send_email
 

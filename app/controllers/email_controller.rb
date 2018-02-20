@@ -1,8 +1,7 @@
 class EmailController < ApplicationController
   def create
-    @email_address = params[:email].strip.downcase
-    create_suggestion
-    return render(:could_not_create) unless MailchimpList.add(@email_address)
+    @suggestion = Suggestion.create(suggestion_params)
+    @mailchimp_add_successful = MailchimpList.add(email_address)
   end
 
   def destroy
@@ -19,15 +18,9 @@ class EmailController < ApplicationController
 
   private
 
-  def create_suggestion
-    return if suggestion_string.blank?
-    Suggestion.create(suggestion: suggestion_string, email: @email_address)
+  def email_address
+    @email_address ||= suggestion_params[:email]
   end
-
-  def suggestion_string
-    params[:suggestion]
-  end
-  helper_method :suggestion_string
 
   def failed_flash_message(email)
     {
@@ -36,6 +29,13 @@ class EmailController < ApplicationController
               'If you are still having trouble contact ' \
               'daniel@lockyy.com to get this resolved.',
     }
+  end
+
+  def suggestion_params
+    params.require(:submission).permit(:email, :suggestion, :path).tap do |params|
+      params[:email].strip!
+      params[:email].downcase!
+    end
   end
 
   def successful_flash_message(email)

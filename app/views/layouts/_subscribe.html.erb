@@ -6,9 +6,10 @@
     <div class='sub-message'>
       Like what I'm doing? Subscribe and I'll let you know when I write new stuff.
     </div>
-    <%= form_tag emails_path, remote: true do %>
-      <%= text_field_tag :email, '', placeholder: :Email, required: true %>
-      <%= text_area_tag :suggestion, '', placeholder: "If you've got an idea for what I should write next I'd love to hear it" %>
+    <%= form_for :submission, url: emails_path, remote: true do |f| %>
+      <%= f.hidden_field :path, value: request.original_fullpath %>
+      <%= f.text_field :email, placeholder: :Email, required: true %>
+      <%= f.text_area :suggestion, placeholder: "If you've got an idea for what I should write next I'd love to hear it" %>
       <%= submit_tag "Subscribe", id: 'subscribe' %>
     <% end %>
 

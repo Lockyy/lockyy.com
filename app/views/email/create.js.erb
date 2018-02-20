@@ -1,10 +1,10 @@
-button = $('#subscribe')
+button = $('.sub-container #subscribe')
 oldText = button.val()
-button.val('<%= successful_subscribe_message(@email_address, suggestion_string) %>')
+button.val('<%= subscribe_message(@suggestion, @mailchimp_add_successful, @email_address) %>')
 setTimeout(function() {
   button.val(oldText)
-  $('.sub-container #email').val('')
-  $('.sub-container #suggestion').val('')
+  $('.sub-container #submission_email').val('')
+  $('.sub-container #submission_suggestion').val('')
   $('.sub-container #sub-button').html('Subscribe')
 }, 2050)
 setTimeout(function() {
