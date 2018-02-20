@@ -1,7 +1,7 @@
 class EmailController < ApplicationController
   def create
     @email_address = params[:email].strip.downcase
-    Suggestion.create(suggestion: suggestion_string, email: @email_address) if suggestion_string
+    create_suggestion
     return render(:could_not_create) unless MailchimpList.add(@email_address)
   end
 
@@ -18,6 +18,11 @@ class EmailController < ApplicationController
   end
 
   private
+
+  def create_suggestion
+    return if suggestion_string.blank?
+    Suggestion.create(suggestion: suggestion_string, email: @email_address)
+  end
 
   def suggestion_string
     params[:suggestion]
