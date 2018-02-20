@@ -2,6 +2,8 @@ ActiveAdmin.register Suggestion, as: 'Suggestions' do
   config.sort_order = 'created_at_desc'
   menu priority: 7
 
+  actions :index, :show, :edit, :update
+
   permit_params :done, :good
 
   show do |_section|
