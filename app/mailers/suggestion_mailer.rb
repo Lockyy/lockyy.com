@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SuggestionMailer < ApplicationMailer
   def suggestion(email_address, suggestion)
     @email_address = email_address

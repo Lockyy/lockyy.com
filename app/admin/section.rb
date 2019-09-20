@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ActiveAdmin.register Section, as: 'Portfolio Section' do
   permit_params :section_id, :name, :description, :position
   menu priority: 3

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ActiveAdmin.register Suggestion, as: 'Suggestions' do
   config.sort_order = 'created_at_desc'
   menu priority: 7

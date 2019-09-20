@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ActiveAdmin.register Bio, as: 'Landing Message' do
   permit_params :content
   menu priority: 2

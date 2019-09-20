@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ActiveAdmin.register Blog::Category do
   permit_params :title
   menu priority: 5

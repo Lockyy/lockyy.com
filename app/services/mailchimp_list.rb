@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MailchimpList < Object
   class << self
     def contains_email_address?(email_address)
@@ -6,6 +8,7 @@ class MailchimpList < Object
 
     def add(email_address)
       return true if contains_email_address?(email_address)
+
       mailchimp_api_object.lists.subscribe(list_id, mailchimp_hash(email_address))
       true
     rescue Mailchimp::ListInvalidUnsubMemberError => e
@@ -16,6 +19,7 @@ class MailchimpList < Object
 
     def remove(email_address)
       return true unless contains_email_address?(email_address)
+
       mailchimp_api_object.lists.unsubscribe(list_id, mailchimp_hash(email_address))['complete']
     end
 

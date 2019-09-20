@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SubscriptionHelper
   def subscribe_message(suggestion, mailchimp_add_successful, email_address)
     ''.tap do |message|

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EmailController < ApplicationController
   def create
     @suggestion = Suggestion.create(suggestion_params)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module StaticPagesHelper
   def gravatar(options = { size: 32 })
     gravatar_id = Digest::MD5.hexdigest('daniel@lockyy.com')
