@@ -31,16 +31,16 @@ class Section < ApplicationRecord
   private
 
   def prevent_destroy_when_items
-    unless items.empty?
-      errors.add(:category, 'cannot delete when items exist for it ')
-      false
-    end
+    return if items.empty?
+
+    errors.add(:category, 'cannot delete when items exist for it ')
+    false
   end
 
   def prevent_destroy_when_subsections
-    unless subsections.empty?
-      errors.add(:category, 'cannot delete when subsections exist for it ')
-      false
-    end
+    return if subsections.empty?
+
+    errors.add(:category, 'cannot delete when subsections exist for it ')
+    false
   end
 end

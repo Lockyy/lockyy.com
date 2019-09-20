@@ -47,3 +47,8 @@ Style/TrailingCommaInHashLiteral:
 Layout/AlignHash:
   Enabled: true
   EnforcedColonStyle: table
+
+Metrics/BlockLength:
+  Enabled: true
+  Exclude:
+    - app/admin/**/*

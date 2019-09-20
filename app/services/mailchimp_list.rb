@@ -11,9 +11,9 @@ class MailchimpList < Object
 
       mailchimp_api_object.lists.subscribe(list_id, mailchimp_hash(email_address))
       true
-    rescue Mailchimp::ListInvalidUnsubMemberError => e
+    rescue Mailchimp::ListInvalidUnsubMemberError => _e
       false
-    rescue Mailchimp::Error => e
+    rescue Mailchimp::Error => _e
       false
     end
 

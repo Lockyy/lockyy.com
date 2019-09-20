@@ -24,7 +24,7 @@ ActiveAdmin.register Blog::Category do
       link_to category.title, post_category_path(category: category)
     end
     column :total_views do |category|
-      category.posts.inject(0) { |i, post| i += post.views }
+      category.posts.map(&:views).sum
     end
     column :total_posts do |category|
       category.posts.length
@@ -37,7 +37,7 @@ ActiveAdmin.register Blog::Category do
       row :id
       row :title
       row :slug
-      row :total_posts do |category|
+      row :total_posts do
         category.posts.length
       end
     end

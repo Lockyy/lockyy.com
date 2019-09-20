@@ -18,17 +18,17 @@ module Blog
 
     has_many :posts
 
-    validates :title, presence: true, uniqueness: :true, length: { maximum: 40 }
+    validates :title, presence: true, uniqueness: true, length: { maximum: 40 }
 
     before_destroy :prevent_destroy_when_posts
 
     private
 
     def prevent_destroy_when_posts
-      unless posts.empty?
-        errors.add(:category, 'cannot delete when posts exist for it ')
-        false
-      end
+      return if posts.empty?
+
+      errors.add(:category, 'cannot delete when posts exist for it ')
+      false
     end
 
     def should_generate_new_friendly_id?

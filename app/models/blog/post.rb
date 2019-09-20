@@ -23,7 +23,7 @@ module Blog
 
     belongs_to :category
 
-    validates :title, presence: true, uniqueness: :true
+    validates :title, presence: true, uniqueness: true
     validates :content, presence: true
     validates :category, presence: true
     validates :visible_at, presence: true

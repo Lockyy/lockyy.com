@@ -16,9 +16,9 @@ class Bio < ApplicationRecord
   private
 
   def ensure_one
-    unless Bio.all.length > 1
-      errors.add(:bio, 'cannot delete when only bio')
-      false
-    end
+    return if Bio.where.not(id: id).any?
+
+    errors.add(:bio, 'cannot delete when only bio')
+    false
   end
 end

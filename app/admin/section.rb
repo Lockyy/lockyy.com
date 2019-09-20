@@ -9,7 +9,7 @@ ActiveAdmin.register Section, as: 'Portfolio Section' do
       row :id
       row :name
       row :description
-      row :total_items do |section|
+      row :total_items do
         section.items.length
       end
     end
