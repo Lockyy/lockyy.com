@@ -3,9 +3,12 @@
 
 AllCops:
   Include:
-    - '**/Rakefile'
+    - '**/*.rb'
     - '**/config.ru'
+    - '**/Rakefile'
+    - 'Gemfile'
   Exclude:
+    - 'config/initializers/**/*'
     - 'vendor/**/*'
     - 'spec/fixtures/**/*'
     - 'node_modules/**/*'
@@ -14,7 +17,6 @@ AllCops:
     - 'db/seeds.rb'
     - 'client/node_modules/**/*'
     - 'bin/**/*'
-    - !ruby/regexp /old_and_unused\.rb$/
 
 Rails:
   Enabled: true
@@ -25,22 +27,23 @@ Metrics/LineLength:
 Style/Documentation:
   Enabled: false
 
-Style/BlockDelimiters:
-  Enabled: false
-
 Metrics/MethodLength:
   Max: 15
 
-Style/IndentArray:
+Layout/IndentFirstArrayElement:
   Enabled: false
 
 Style/Lambda:
   Enabled: false
 
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
   Enabled: true
   EnforcedStyleForMultiline: comma
 
-Style/AlignHash:
+Style/TrailingCommaInHashLiteral:
+  Enabled: true
+  EnforcedStyleForMultiline: comma
+
+Layout/AlignHash:
   Enabled: true
   EnforcedColonStyle: table
