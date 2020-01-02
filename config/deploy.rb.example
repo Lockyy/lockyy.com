@@ -5,31 +5,24 @@ require 'mina/git'
 require 'mina/rvm'    # for rvm support. (http://rvm.io)
 require 'mina/nginx'
 
-# Basic settings:
-#   domain       - The hostname to SSH to.
-#   deploy_to    - Path to deploy into.
-#   repository   - Git repo to clone from. (needed by mina/git)
-#   branch       - Branch name to deploy. (needed by mina/git)
-
-set :domain, "example.com"
-set :deploy_to, "/path/to/deploy/into"
-set :repository, "git@github.com:example/example.git"
-set :branch, "master"
+set :domain, URL
+set :deploy_to, PATH_TO_INSTALL_INTO
+set :repository, REPO
+set :branch, 'master'
 set :app_path, "#{deploy_to}/current"
+set :user, 'deploy'
 set :rails_env, 'production'
 
-# For system-wide RVM install.
-set :rvm_path, '/home/root/.rvm/bin/rvm'
+set :forward_agent, true
 
-# Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
-# They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/database.yml', 'config/unicorn.rb', 'log', 'tmp', '.env']
+set :rvm_path, '/home/deploy/.rvm/scripts/rvm'
 
 # Optional settings:
 #   set :port, '30000'     # SSH port number.
 
-set :user, 'root'    # Username in the server to SSH to.
-set :forward_agent, true     # SSH forward_agent.
+# Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
+# They will be linked in the 'deploy:link_shared_paths' step.
+set :shared_paths, ['config/database.yml', 'config/unicorn.rb', 'log', 'tmp', '.env']
 
 # This task is the environment that is loaded for most commands, such as
 # `mina deploy` or `mina rake`.
